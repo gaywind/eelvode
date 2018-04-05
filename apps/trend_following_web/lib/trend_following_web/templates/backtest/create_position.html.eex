@@ -1,0 +1,47 @@
+<div class="backtest-create-position">
+  <p>
+    <span class="button is-info is-small">建仓</span>
+    <strong class="date"><%= @dayk.date %></strong>
+  </p>
+  
+  <p class="backtest-market">
+    <span>开盘: <strong><%= @dayk.open |> float_to_string() %></strong></span>
+    <span>收盘: <strong><%= @dayk.close |> float_to_string() %></strong></span>
+    <span>最高: <strong><%= @dayk.high |> float_to_string() %></strong></span>
+    <span>最低: <strong><%= @dayk.low |> float_to_string() %></strong></span>
+  </p>
+  
+  <table class="table is-bordered is-striped is-narrow is-fullwidth">
+    <tr>
+      <th>头寸单位</th>
+      <th>买入价</th>
+      <th>止损价</th>
+      <th>单位规模</th>
+    </tr>
+    <%= for {position, n} <- Enum.with_index(@positions, 1) do %>
+    <tr>
+      <td>第 <%= n %> 单位(<%= if n == 1, do: "建仓", else: "加仓" %>)</td>
+      <td><%= position.buy_price |> float_to_string() %></td>
+      <td><%= position.stop_price |> float_to_string() %></td>
+      <td><%= @cur_state.schema.unit %> 手</td>
+    </tr>
+    <% end %>
+  </table>
+
+  <p>
+    <strong>资金：</strong>
+    <%= @before_state.account |> float_to_string() %>
+  </p>
+  <p>
+    <strong>理由：</strong>
+    价格突破了 <%= if @system == 1, do: 20, else: 60 %> 日<%= if @trend == "bull", do: "最高", else: "最低" %>价 <%= @price |> float_to_string() %>
+  </p>
+  <p>
+    <strong>操作：</strong>
+    以 <%= @price |> float_to_string() %> 的价格，买入 <%= @amount %> 股<%= if @trend == "bull", do: "做多", else: "做空" %>
+  </p>
+  <p>
+    <strong>剩余：</strong>
+    <%= @cur_state.account |> float_to_string() %>
+  </p>
+</div>

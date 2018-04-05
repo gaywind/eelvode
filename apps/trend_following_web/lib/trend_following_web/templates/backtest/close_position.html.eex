@@ -1,0 +1,30 @@
+<div class="backtest-close-position"> 
+  <p>
+    <span class="button is-warning is-small">平仓</span> 
+    <strong class="date"><%= @date %></strong>
+  </p>
+  
+  <p class="backtest-market">
+    <span>开盘: <strong><%= @dayk.open |> float_to_string() %></strong></span>
+    <span>收盘: <strong><%= @dayk.close |> float_to_string() %></strong></span>
+    <span>最高: <strong><%= @dayk.high |> float_to_string() %></strong></span>
+    <span>最低: <strong><%= @dayk.low |> float_to_string() %></strong></span>
+  </p>
+
+  <p>
+    <strong>资金：</strong>
+    <%= @before_state.account |> float_to_string() %>
+  </p>
+  <p>
+    <strong>理由：</strong>
+    价格突破了近 <%= if @system == 1, do: 10, else: 20 %> 日<%= if @trend == "bull", do: "最低", else: "最高" %>价 <%= @price |> float_to_string() %>
+  </p>
+  <p>
+    <strong>操作：</strong>
+    以 <%= @price |> float_to_string() %> 元价格平仓，卖出 <%= @amount %> 股
+  </p>
+  <p>
+    <strong>剩余：</strong>
+    <%= @cur_state.account |> float_to_string() %>
+  </p>
+</div>

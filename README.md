@@ -2,11 +2,11 @@
 
 
 ## Requirements
-1. elixir >= 1.4.2
-2. phoenix >= 1.3.0-rc.1
-3. postgresql >= 9.6
-4. node >= 7.2.0
-5. yarn >= 0.17.9
+1. `elixir >= 1.4.2`
+2. `phoenix >= 1.3.0-rc.1`
+3. `postgresql >= 9.6`
+4. `node >= 7.2.0`
+5. `yarn >= 0.17.9`
 
 ## Install
 1. `mix deps.get`

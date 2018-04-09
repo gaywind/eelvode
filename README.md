@@ -1,7 +1,7 @@
 # EeLvode
 
 
-[中文](https://github.com/80k/eelvode/blob/master/README_zh-cn.md).
+[中文](https://github.com/80k/eelvode/blob/master/README_zh-cn.md)
 
 ## Requirements
 1. `elixir >= 1.4.2`

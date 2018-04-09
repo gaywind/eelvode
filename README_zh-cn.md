@@ -24,4 +24,3 @@ docker-compose run eelvode mix ecto.migrate
 docker-compose run eelvode mix run apps/priv/repo/seeds.exs
 docker-compose restart eelvode
 ```
-

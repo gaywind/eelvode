@@ -16,7 +16,6 @@
 ## 开发者模式
 1. `cd ~/eelvode && mix phx.server`
 
-
 ## Docker安装 
 ```bash
 docker-compose up -d eelvode

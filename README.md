@@ -1,6 +1,8 @@
 # EeLvode
 
 
+[中文](https://github.com/80k/eelvode/blob/master/README_zh-cn.md).
+
 ## Requirements
 1. `elixir >= 1.4.2`
 2. `phoenix >= 1.3.0-rc.1`

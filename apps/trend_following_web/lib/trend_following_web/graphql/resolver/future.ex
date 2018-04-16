@@ -31,6 +31,6 @@ defmodule TrendFollowingWeb.Graphql.Resolver.Future do
   end
 
   defp timestamp do
-    System.system_time() / 1_000_000_000 |> round()
+    System.system_time(:second)
   end
 end
